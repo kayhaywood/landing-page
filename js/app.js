@@ -67,13 +67,3 @@ const setActiveSection = () => {
 
 // Attach scroll event listener
 document.addEventListener('scroll', setActiveSection);
-
-// Let Nav hide when not scrolling
-let navTimeout;
-document.addEventListener('scroll', () => {
-  navBarList.style.display = 'block'; // Make Navbar visible while scrolling
-  clearTimeout(navTimeout); // Reset timer when scroll starts again
-  navTimeout = setTimeout(() => {
-    navBarList.style.display = 'none'; // Hide the Navbar after 2 seconds of inactivity
-  }, 2000);
-});
